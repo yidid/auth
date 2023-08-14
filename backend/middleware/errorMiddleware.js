@@ -7,7 +7,7 @@ const errorHandler=(err,req, res, next)=>{
     let statusCode =res.statusCode===200?500:res.statusCode;
     let message = err.message;
 
-    if(error.name==='CaseError' && error .kind==='objectId'){
+    if(err.name==='CaseError' && err.kind==='objectId'){
         statusCode= 404;
         message = 'Resource not found';
     }
